@@ -11,7 +11,8 @@ body {
 	font-weight: bold;
 }
 .about {
-	background: red;
+	background-image: url('pattern.png');
+	background-repeat: repeat;
 	color: white;
 	padding: 3em 0;
 }
