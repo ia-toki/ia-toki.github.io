@@ -45,6 +45,9 @@ body {
 	height: 4em;
 	font-weight: bold;
 }
+.learn {
+	color: white;
+}
 .organizer {
 	margin-top: 2em;
 }
