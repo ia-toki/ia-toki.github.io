@@ -1,0 +1,65 @@
+body {
+	font-family: 'Lato', sans-serif;
+	font-size: 2em;
+}
+.about {
+	background: red;
+	color: white;
+	padding: 3em 0;
+}
+.about h1 {
+	font-size: 3em;
+}
+.about p {
+	margin-top: 3em;
+}
+.subscribe {
+	padding: 3em 0;
+}
+.subscribe .email-wrap {
+	padding: 0;
+}
+.subscribe .button-wrap {
+	padding: 0;
+}
+.subscribe input {
+	border-radius: 0;
+	height: 4em;
+}
+.subscribe button {
+	width: 100%;
+	border-radius: 0;
+	height: 4em;
+	font-weight: bold;
+}
+.organizer {
+	margin-top: 2em;
+}
+.organizer .organizer-unit {
+	margin-top: 2em;
+}
+.organizer .logo-wrapper {
+	height: 100px;
+	width: 150px;
+	margin: 0 auto;
+	white-space: nowrap;
+}
+.organizer .helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+.organizer img {
+	margin: 0 auto;
+	max-height: 100px;
+	max-width: 150px;
+	vertical-align: middle;
+	display: inline-block;;
+}
+.footer {
+	background: red;
+	color: white;
+	margin-top: 1em;
+	padding: 0.4em 0;
+	font-size: 0.7em;
+}
