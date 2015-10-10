@@ -16,6 +16,9 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
 }
+.text-shadow {
+	text-shadow: 2px 2px #000000;
+}
 .about {
 	color: white;
 	padding: 3em 0;
@@ -28,6 +31,7 @@ body {
 }
 .subscribe {
 	padding: 3em 0;
+	padding-bottom: 4em;
 }
 .subscribe .email-wrap {
 	padding: 0;
@@ -46,13 +50,19 @@ body {
 	font-weight: bold;
 }
 .event, .event a {
+	padding-top: 1em;
 	color: white;
 }
 .learn {
 	color: white;
+	padding-top: 2em;
+	padding-bottom: 5em;
 }
-.organizer {
-	margin-top: 2em;
+.facts {
+	color: white;
+	height: 700px;
+	background-image: url('../images/indo.jpg');
+	background-size: cover;
 }
 .organizer .organizer-unit {
 	margin-top: 2em;
@@ -94,4 +104,9 @@ body {
 	margin: 0 auto;
 	margin-top: 6.4px;
 	width: 60px;
+}
+.middle {
+  position: relative;
+  top: 50%;
+  transform: translateY(50%);
 }
