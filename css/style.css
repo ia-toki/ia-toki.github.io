@@ -78,3 +78,14 @@ body {
 	padding: 0.4em 0;
 	font-size: 0.7em;
 }
+.social-media {
+	padding: 1em;
+	width: ;
+}
+.fb-like {
+	float: left;
+}
+.twitter-follow-button {
+	float: right;
+	margin-top: 6.4px;
+}
