@@ -83,12 +83,15 @@ body {
 }
 .social-media {
 	padding: 1em;
-	width: ;
 }
 .fb-like {
-	float: left;
+	display: block !important;
+	width: 60px;
+	margin: 0 auto;
 }
 .twitter-follow-button {
-	float: right;
+	display: block !important;
+	margin: 0 auto;
 	margin-top: 6.4px;
+	width: 60px;
 }
