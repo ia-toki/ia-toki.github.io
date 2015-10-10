@@ -45,6 +45,9 @@ body {
 	height: 4em;
 	font-weight: bold;
 }
+.event, .event a {
+	color: white;
+}
 .learn {
 	color: white;
 }
