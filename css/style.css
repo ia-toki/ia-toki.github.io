@@ -110,3 +110,9 @@ body {
   top: 50%;
   transform: translateY(50%);
 }
+
+@media (max-width: 400px) {
+	.middle {
+	  transform: translateY(20%);
+	}
+}
