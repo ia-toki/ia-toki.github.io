@@ -12,7 +12,7 @@
 		<link rel="canonical" href="http://ngoding.org" itemprop="url">
 		<title itemprop="name">Ngoding Seru</title>
 		<link rel="shortcut icon" type="image/ico" href="images/favicon.ico">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" />
 		<link href="css/style.css" rel='stylesheet' type='text/css' />
 	</head>
@@ -40,27 +40,20 @@
 			<div id="subscribe" class="subscribe">
 				<div class="container">
 					<div class="row">
-						<div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+						<div class="row col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
 							<p class="text-center">Untuk informasi lebih lanjut, daftarkan email Anda.</p>
-							<form id="emailForm" class="clearfix">
-								<div class="row hidden-xs">
-									<div class="col-xs-6 col-xs-offset-2 email-wrap">
-										<input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email">
-									</div>
-									<div class="col-xs-2 button-wrap">
-										<button type="submit" class="btn btn-danger">Daftar</button>
-									</div>
+							<form id="emailForm" class="row clearfix">
+								<div class="col-sm-6 col-sm-offset-2 email-wrap">
+									<input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email">
 								</div>
-								<div class="hidden-sm hidden-md hidden-lg">
-									<div class="row email-wrap">
-										<input type="email" class="form-control" id="inputEmailMobile" placeholder="Email" name="email">
-									</div>
-									<div class="row button-wrap">
-										<button type="submit" class="btn btn-danger">Daftar</button>
-									</div>
+								<div class="col-sm-2 button-wrap">
+									<button id="submitButton" type="submit" class="btn btn-danger">Daftar</button>
 								</div>
-								<p id="text-success" class="text-success text-center">Email sudah berhasil didaftarkan.</p>
-								<p id="text-fail" class="text-danger text-center">Email sudah terdaftar.</p>
+								<div class="col-sm-8 col-sm-offset-2 button-wrap">
+									<button id="shareButton" type="button" class="btn btn-success">Berbagi</button>
+								</div>
+								<!-- <p id="text-success" class="text-success text-center">Email sudah berhasil didaftarkan.</p> -->
+								<!-- <p id="text-fail" class="text-danger text-center">Email sudah terdaftar.</p> -->
 							</form>
 							<br />
 							<br />
@@ -142,7 +135,7 @@
 						<h2 class="text-center title">Memperkenalkan Platform Pemrograman TLX</h2>
 						<p class="text-center">Sebuah platform e-learning khusus untuk pemrograman.</p>
 						<hr>
-						
+
 						<div class="row">
 							<div class="col-md-3 text-right hidden-xs hidden-sm">
 								<img src="images/oss.png" alt="Open Source Software">
@@ -298,7 +291,10 @@
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="js/socialShare.min.js"></script>
+		<link href="css/arthref.min.css" rel='stylesheet' type='text/css' />
 		<script src="js/firebase.js"></script>
+		<script src="js/share.js"></script>
 		<script>
              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
