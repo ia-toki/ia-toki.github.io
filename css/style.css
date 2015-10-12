@@ -17,7 +17,6 @@ body {
 	background: white;
 }
 .title {
-	font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
 }
 .text-shadow {
@@ -32,6 +31,15 @@ body {
 }
 .about p {
 	margin-top: 3em;
+}
+.section {
+	margin-bottom: 3em;
+}
+.why {
+	color: white;
+}
+.why ol li {
+	margin-top: 1em;
 }
 .subscribe {
 	padding: 3em 0;
@@ -65,8 +73,16 @@ body {
 .facts {
 	color: white;
 	height: 700px;
-	background-image: url('../images/indo.jpg');
 	background-size: cover;
+}
+#facts-APIO {
+	background-image: url('../images/indo.jpg');
+}
+#facts-OSN {
+	background-image: url('../images/osn.jpg');
+}
+#facts-TG {
+	background-image: url('../images/training-gate.jpg');
 }
 .organizer .organizer-unit {
 	margin-top: 2em;
@@ -113,15 +129,6 @@ body {
   position: relative;
   top: 50%;
   transform: translateY(50%);
-}
-.why {
-	color: white;
-}
-.why ol li {
-	margin-top: 1em;
-}
-.section {
-	margin-bottom: 3em;
 }
 @media (max-width: 400px) {
 	.middle {
