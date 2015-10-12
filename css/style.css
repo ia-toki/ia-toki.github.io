@@ -200,6 +200,7 @@ body {
 
 .facts:active .container {
 	opacity: 0;
+}
 
 #text-success, #text-fail {
 	text-shadow: 0 2px 3px rgba(0,0,0,.9);
