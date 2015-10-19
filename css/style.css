@@ -32,6 +32,9 @@ body {
 .about p {
 	margin-top: 3em;
 }
+.about a {
+	color: white;
+}
 .section {
 	margin-bottom: 3em;
 }
@@ -69,6 +72,13 @@ body {
 	color: white;
 	padding-top: 2em;
 	padding-bottom: 5em;
+}
+.registration {
+	color: white;
+	padding-bottom: 5em;
+}
+.registration a {
+	color: white;
 }
 .facts {
 	color: white;
