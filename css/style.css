@@ -1,3 +1,8 @@
+@font-face {
+	font-family: 'LemonMilk';
+	src: url('LemonMilk.otf');
+}
+
 html, body {
 	height: 100%;
 	margin: 0;
@@ -22,12 +27,21 @@ body {
 .text-shadow {
 	text-shadow: 2px 2px #000000;
 }
+.flex-center {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
 .about {
 	color: white;
-	padding: 3em 0;
+	height: 50vh;
 }
 .about h1 {
-	font-size: 3em;
+	font-family: 'LemonMilk';
+	font-size: 5em;
+	text-align: center;
 }
 .about p {
 	margin-top: 3em;
@@ -45,8 +59,15 @@ body {
 	margin-top: 1em;
 }
 .subscribe {
+	min-height: 50vh;
 	padding: 3em 0;
 	padding-bottom: 4em;
+}
+.subscribe h1 {
+	font-family: 'LemonMilk';
+	font-size: 3em;
+	text-align: center;
+	color: #B00600;
 }
 .subscribe .email-wrap {
 	padding: 0;
@@ -167,7 +188,7 @@ body {
 	-ms-transform: scale(1.25);
 	transform: scale(1.25);
 
-	-webkit-transition:
+	/*-webkit-transition:
 		-webkit-filter .5s, -moz-filter .5s, -o-filter .5s, -ms-filter .5s, filter 5s,
 		-webkit-transform .5s, -moz-transform .5s, -o-transform .5s, -ms-transform .5s, transform .5s;
 	-moz-transition:
@@ -181,10 +202,10 @@ body {
 		-webkit-transform .5s, -moz-transform .5s, -o-transform .5s, -ms-transform .5s, transform .5s;
 	transition:
 		-webkit-filter .5s, -moz-filter .5s, -o-filter .5s, -ms-filter .5s, filter 5s,
-		-webkit-transform .5s, -moz-transform .5s, -o-transform .5s, -ms-transform .5s, transform .5s;
+		-webkit-transform .5s, -moz-transform .5s, -o-transform .5s, -ms-transform .5s, transform .5s;*/
 }
 
-.facts:active .background {
+/*.facts:active .background {
 	-webkit-filter: unset;
 	-moz-filter: unset;
 	-o-filter: unset;
@@ -196,9 +217,9 @@ body {
 	-o-transform: unset;
 	-ms-transform: unset;
 	transform: unset;
-}
+}*/
 
-.facts .container {
+/*.facts .container {
 	opacity: 100%;
 
 	-webkit-transition: opacity .5s;
@@ -210,7 +231,7 @@ body {
 
 .facts:active .container {
 	opacity: 0;
-}
+}*/
 
 #text-success, #text-fail {
 	text-shadow: 0 2px 3px rgba(0,0,0,.9);
