@@ -14,10 +14,13 @@
 		<link rel="shortcut icon" type="image/ico" href="images/favicon.ico">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" />
-		<link href="css/style.css" rel='stylesheet' type='text/css' />
+		<link href="css/style.less" rel='stylesheet/less' type='text/css' />
+
+		<script>less = {env:"development"};</script>
+		<script src="js/less.min.js" type="text/javascript"></script>
+		<script>less.watch();</script>
 	</head>
 	<body>
-		<div id="fb-root"></div>
 		<script>(function(d, s, id) {
 			var js, fjs = d.getElementsByTagName(s)[0];
 			if (d.getElementById(id)) return;
@@ -26,12 +29,22 @@
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));</script>
 
-		<header id="about" class="about header flex-center">
+		<header id="about" class="about header">
 			<h1>Ngoding Seru</h1>
 		</header>
 
-		<div id="subscribe" class="background-white subscribe flex-center">
-			<div class="container">
+		<section id="detail-and-action">
+			<section id="detail">
+				<h1>4 - 5 Desember</h1>
+			</section>
+			<section id="action">
+				<a href="https://competition.ia-toki.org" target="_blank"><button>Ikuti</button></a>
+				<div id="sharing">
+					<h1>Bagikan</h1>
+					<div class="addthis_sharing_toolbox"></div>
+				</div>
+			</section>
+			<!-- <div class="container">
 				<div class="row">
 					<div class="col-md-6 flex-center">
 						<h1>4 - 5 Desember</h1>
@@ -57,8 +70,8 @@
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
+			</div> -->
+		</section>
 
 		<div id="why" class="why section">
 			<div class="container">
@@ -315,6 +328,7 @@
 				"logo": "http://ia-toki.org/images/IA-TOKI.png"
 			}
 		</script>
+		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-565a2678b95e240e" async="async"></script>
 	</body>
 
 </html>
