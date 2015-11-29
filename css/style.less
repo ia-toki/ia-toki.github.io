@@ -66,26 +66,15 @@
 	color: @color-white;
 	border-color: @color-white;
 }
-.title {
-	font-weight: bold;
-}
-.text-shadow {
-	text-shadow: 2px 2px #000000;
-}
-.flex-center {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
-}
-.flex-vertical {
-	flex-direction: column;
-}
-.flex-wrap {
-	flex-wrap: wrap;
-}
-.flex-stretch {
-	align-self: stretch;;
+
+.list-clear {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	li {
+		padding: 0;
+		margin: 0;
+	}
 }
 
 html, body {
@@ -145,7 +134,7 @@ p {
 		}
 
 		h1 {
-			color: @color-red-sec;
+			color: @color-red;
 			font-size: 2rem;
 			margin: 0;
 		}
@@ -154,50 +143,41 @@ p {
 		}
 	}
 }
-#why {
+
+.information {
 	.background-red;
-	.row; .middle-xs; .center-xs; .start-md;
+	.row; .middle-xs; .center-xs;
 	padding: 4rem;
 
 	article {
-		.col-xs-12; .col-md-6;
+		.col-xs-12;
+	}
 
-		h1 {
-			font-size: 2em;
-		}
+	h1 {
+		font-size: 2em;
+		margin-top: 0;
+	}
+}
+
+#why {
+	.start-md;
+	article {
+		.col-md-6;
 	}
 }
 
 #what {
 	.background-white;
-	.row; .middle-xs; .center-xs; .end-md;
-	padding: 4rem;
-
+	.end-md;
 	article {
-		.col-xs-12; .col-md-6;
-
-		h1 {
-			font-size: 2em;
-		}
+		.col-md-6;
 	}
 }
 
 #division {
-	.background-red;
-	.row; .middle-xs; .center-xs; .start-md;
-	padding: 4rem;
-
+	.start-md;
 	article {
-		.col-xs-12;
-
-		h1 {
-			font-size: 2em;
-		}
-
 		ol {
-			list-style-type: none;
-			padding: 0;
-
 			.row; .top-xs; .center-xs; .between-md;
 
 			li {
@@ -210,12 +190,36 @@ p {
 		}
 	}
 }
-// .why {
-// 	color: white;
-// }
-// .why ol li {
-// 	margin-top: 1em;
-// }
+
+#learn {
+	.background-white;
+
+	article {
+		max-width: @m-break;
+		ol {
+			.row; .top-xs; .center-xs;
+			li {
+				.col-xs-12;
+				.row; .top-xs; .center-xs; .start-md;
+				margin-top: 2rem;
+				margin-bottom: 2rem;
+
+				img {
+					.col-xs;
+					flex: initial;
+				}
+
+				div {
+					.col-xs-12; .col-md;
+					.media(@m-break; h2; {
+						margin-top: 0;
+					});
+				}
+			}
+		}
+	}
+}
+
 // .event, .event a {
 // 	padding-top: 1em;
 // 	color: white;
