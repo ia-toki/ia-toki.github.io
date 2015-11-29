@@ -1,4 +1,6 @@
 @import "../bower_components/flexboxgrid-less/flexboxgrid.less";
+@half-gutter-width:		  2rem;
+@gutter-compensation:	 -2rem;
 
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300);
 @font-face {
@@ -24,10 +26,18 @@
 .background-red {
 	background: none;
 	color: @color-white;
+
+	hr {
+		border: 1px solid @color-white;
+	}
 }
 .background-white {
 	background: @color-white;
 	color: @color-red;
+
+	hr {
+		border: 1px solid @color-red;
+	}
 }
 .button {
 	border: 0.25rem solid;
@@ -110,7 +120,7 @@ p {
 	min-height: 50vh;
 
 	#detail {
-		.col-xs-12; .col-md-6;
+		.col-xs-12; .col-md;
 
 		h1 {
 			font-family: @title-font;
@@ -119,7 +129,7 @@ p {
 		}
 	}
 	#action {
-		.col-xs-12; .col-md-6;
+		.col-xs-12; .col-md;
 		.row; .middle-xs; .center-xs;
 
 		button {
@@ -147,13 +157,56 @@ p {
 #why {
 	.background-red;
 	.row; .middle-xs; .center-xs; .start-md;
-	padding: 2em;
+	padding: 4rem;
 
 	article {
 		.col-xs-12; .col-md-6;
 
 		h1 {
 			font-size: 2em;
+		}
+	}
+}
+
+#what {
+	.background-white;
+	.row; .middle-xs; .center-xs; .end-md;
+	padding: 4rem;
+
+	article {
+		.col-xs-12; .col-md-6;
+
+		h1 {
+			font-size: 2em;
+		}
+	}
+}
+
+#division {
+	.background-red;
+	.row; .middle-xs; .center-xs; .start-md;
+	padding: 4rem;
+
+	article {
+		.col-xs-12;
+
+		h1 {
+			font-size: 2em;
+		}
+
+		ol {
+			list-style-type: none;
+			padding: 0;
+
+			.row; .top-xs; .center-xs; .between-md;
+
+			li {
+				.col-xs-12; .col-md;
+
+				h2 {
+					font-family: @title-font;
+				}
+			}
 		}
 	}
 }
