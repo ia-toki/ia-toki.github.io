@@ -87,77 +87,102 @@ body {
 	background-repeat: repeat;
 	background-attachment: fixed;
 	font-family: @body-font;
+	font-size: 1.5rem;
+	color: @color-white;
+}
+p {
+	line-height: 1.5em;
 }
 #about {
 	.background-red;
 	.row; .middle-xs; .center-xs;
 	height: 50vh;
-}
-#about h1 {
-	font-family: @title-font;
-	font-size: 6em;
-	text-align: center;
+
+	h1 {
+		font-family: @title-font;
+		font-size: 6rem;
+		text-align: center;
+	}
 }
 #detail-and-action {
 	.background-white;
 	.row; .middle-xs;
 	min-height: 50vh;
+
+	#detail {
+		.col-xs-12; .col-md-6;
+
+		h1 {
+			font-family: @title-font;
+			font-size: 4rem;
+			text-align: center;
+		}
+	}
+	#action {
+		.col-xs-12; .col-md-6;
+		.row; .middle-xs; .center-xs;
+
+		button {
+			.button-red;
+			width: @s-break/2;
+			margin: 1rem;
+		}
+
+		#sharing {
+			.row; .middle-xs; .between-xs;
+			width: @s-break/2;
+			margin: 1rem;
+		}
+
+		h1 {
+			color: @color-red-sec;
+			font-size: 2rem;
+			margin: 0;
+		}
+
+		.addthis_sharing_toolbox {
+		}
+	}
 }
-#detail {
-	.col-xs-12; .col-sm-6;
+#why {
+	.background-red;
+	.row; .middle-xs; .center-xs; .start-md;
+	padding: 2em;
+
+	article {
+		.col-xs-12; .col-md-6;
+
+		h1 {
+			font-size: 2em;
+		}
+	}
 }
-#detail h1 {
-	font-family: @title-font;
-	font-size: 4em;
-	text-align: center;
-}
-#action {
-	.col-xs-12; .col-sm-6;
-	.row; .middle-xs; .center-xs;
-}
-#action button {
-	.button-red;
-	width: @s-break/2;
-	margin: 1rem;
-}
-#action #sharing {
-	.row; .bottom-xs; .between-xs;
-	width: @s-break/2;
-	margin: 1rem;
-}
-#action h1 {
-	color: @color-red-sec;
-	font-size: 2em;
-	margin: 0;
-}
-#action .addthis_sharing_toolbox {
-}
-.why {
-	color: white;
-}
-.why ol li {
-	margin-top: 1em;
-}
-.event, .event a {
-	padding-top: 1em;
-	color: white;
-}
-.learn {
-	color: white;
-	padding-top: 2em;
-	padding-bottom: 5em;
-}
-.registration {
-	color: white;
-	padding-bottom: 5em;
-}
-.registration a {
-	color: white;
-}
-.facts {
-	color: white;
-	height: 700px;
-}
+// .why {
+// 	color: white;
+// }
+// .why ol li {
+// 	margin-top: 1em;
+// }
+// .event, .event a {
+// 	padding-top: 1em;
+// 	color: white;
+// }
+// .learn {
+// 	color: white;
+// 	padding-top: 2em;
+// 	padding-bottom: 5em;
+// }
+// .registration {
+// 	color: white;
+// 	padding-bottom: 5em;
+// }
+// .registration a {
+// 	color: white;
+// }
+// .facts {
+// 	color: white;
+// 	height: 700px;
+// }
 #facts-APIO .background {
 	background-image: url('../images/apio2.jpg');
 }
