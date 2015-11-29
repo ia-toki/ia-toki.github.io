@@ -1,0 +1,117 @@
+// .for
+.for(@i, @n) {.-each(@i)}
+.for(@n)     when (isnumber(@n)) {.for(1, @n)}
+.for(@i, @n) when not (@i = @n)  {
+  .for((@i + (@n - @i) / abs(@n - @i)), @n);
+}
+
+// .for-each
+.for-each(@array)   when (default()) {.for-impl_(length(@array))}
+.for-impl_(@i) when (@i > 1)    {.for-impl_((@i - 1))}
+.for-impl_(@i) when (@i > 0)    {.-each(extract(@array, @i))}
+
+.media(@breakpoint; @selector; @rules) when (default()) {
+  @{selector} {
+    @rules();
+  }
+}
+.media(@breakpoint; @selector; @rules) when (@breakpoint > 0px) {
+  @{selector} {
+    @media only screen and (min-width: @breakpoint) {
+      @rules();
+    }
+  }
+}
+
+.basic-col() {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  flex-direction: column;
+  padding-right: @half-gutter-width;
+  padding-left: @half-gutter-width;
+}
+
+.row-reverse() {
+  flex-direction: row-reverse;
+  flex-wrap: wrap-reverse;
+}
+
+.col-reverse() {
+  flex-direction: column-reverse;
+  flex-wrap: wrap-reverse;
+}
+
+.makegrid(@class; @breakpoint: 0px) {
+  .media(@breakpoint; ~".col-@{class}"; {
+    .basic-col;
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+  });
+
+  .make-cols(@class; @breakpoint);
+  .make-offsets(@class; @breakpoint);
+  .make-position-classes(@class; @breakpoint);
+}
+
+.make-column(@class; @breakpoint; @col-number) {
+  .media(@breakpoint; ~".col-@{class}-@{col-number}"; {
+    .basic-col;
+    flex-basis: ((100% / @grid-columns) * @col-number);
+    max-width: ((100% / @grid-columns) * @col-number);
+  });
+}
+
+.make-cols(@class; @breakpoint; @col-number: @grid-columns) when (@col-number > 0) {
+  .make-cols(@class; @breakpoint; (@col-number - 1));
+  .make-column(@class; @breakpoint; @col-number);
+}
+
+.make-offset(@class; @breakpoint; @col-number) {
+  .media(@breakpoint; ~".col-@{class}-offset-@{col-number}"; {
+    .basic-col;
+    margin-left: ((100% / @grid-columns) * @col-number);
+  });
+}
+
+.make-offsets(@class; @breakpoint; @col-number: (@grid-columns - 1)) when (@col-number > 0) {
+  .make-offsets(@class; @breakpoint; (@col-number - 1));
+  .make-offset(@class; @breakpoint; @col-number);
+}
+
+.make-position-classes(@class; @breakpoint) {
+
+  .media(@breakpoint; ~".start-@{class}"; {
+    justify-content: flex-start;
+    text-align: start;
+  });
+  .media(@breakpoint; ~".center-@{class}"; {
+    justify-content: center;
+    text-align: center;
+  });
+  .media(@breakpoint; ~".end-@{class}"; {
+    justify-content: flex-end;
+    text-align: end;
+  });
+  .media(@breakpoint; ~".top-@{class}"; {
+    align-items: flex-start;
+  });
+  .media(@breakpoint; ~".middle-@{class}"; {
+    align-items: center;
+  });
+  .media(@breakpoint; ~".bottom-@{class}"; {
+    align-items: flex-end;
+  });
+  .media(@breakpoint; ~".around-@{class}"; {
+    justify-content: space-around;
+  });
+  .media(@breakpoint; ~".between-@{class}"; {
+    justify-content: space-between;
+  });
+  .media(@breakpoint; ~".first-@{class}"; {
+    order: -1;
+  });
+  .media(@breakpoint; ~".last-@{class}"; {
+    order: 1;
+  });
+}

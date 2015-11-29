@@ -1,3 +1,6 @@
+@import "../bower_components/flexboxgrid-less/flexboxgrid.less";
+
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300);
 @font-face {
 	font-family: 'LemonMilk';
 	src: url('LemonMilk.otf');
@@ -6,8 +9,8 @@
 @sm: 768px;
 @md: 992px;
 @lg: 1200px;
-@title-font: 'LemonMilk';
-@body-font: 'Lucida', sans-serif;
+@title-font: 'LemonMilk', sans-serif;
+@body-font: 'Josefin Sans', sans-serif;
 @color-white: white;
 @color-red: #B00600;
 @color-red-sec: #999999;
@@ -27,10 +30,10 @@
 	color: @color-red;
 }
 .button {
-	border: 0.5rem solid;
+	border: 0.25rem solid;
 	background: none;
 	font-family: @title-font;
-	font-size: 3rem;
+	font-size: 2rem;
 	padding: 2rem;
 	opacity: 0.5;
 	.transition(opacity 0.2s);
@@ -84,60 +87,47 @@ body {
 	background-repeat: repeat;
 	background-attachment: fixed;
 	font-family: @body-font;
-	font-size: 2em;
-	// font-style: normal;
-	// font-variant: normal;
-	// font-weight: 500;
-	// line-height: 26.4px;
 }
 #about {
 	.background-red;
-	.flex-center;
-	.flex-vertical;
+	.row; .middle-xs; .center-xs;
 	height: 50vh;
 }
 #about h1 {
 	font-family: @title-font;
-	font-size: 5em;
+	font-size: 6em;
 	text-align: center;
 }
-// .section {
-// 	margin-bottom: 3em;
-// }
 #detail-and-action {
 	.background-white;
-	.flex-center;
-	.flex-wrap;
+	.row; .middle-xs;
 	min-height: 50vh;
-	padding: 3em 1em;
 }
 #detail {
-	flex: 1 1 @sm/2;
+	.col-xs-12; .col-sm-6;
 }
 #detail h1 {
-	margin: 1rem;
-	font-family: 'LemonMilk';
-	font-size: 3em;
+	font-family: @title-font;
+	font-size: 4em;
 	text-align: center;
 }
 #action {
-	flex: 1 1 @sm/2;
-	.flex-center;
-	.flex-vertical;
+	.col-xs-12; .col-sm-6;
+	.row; .middle-xs; .center-xs;
 }
 #action button {
 	.button-red;
-	width: @sm/2;
+	width: @s-break/2;
 	margin: 1rem;
 }
 #action #sharing {
-	.flex-center;
-	width: @sm/2;
+	.row; .bottom-xs; .between-xs;
+	width: @s-break/2;
 	margin: 1rem;
-	justify-content: space-between;
 }
 #action h1 {
 	color: @color-red-sec;
+	font-size: 2em;
 	margin: 0;
 }
 #action .addthis_sharing_toolbox {

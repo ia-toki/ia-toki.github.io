@@ -12,8 +12,10 @@
 		<link rel="canonical" href="http://ngoding.org" itemprop="url">
 		<title itemprop="name">Ngoding Seru</title>
 		<link rel="shortcut icon" type="image/ico" href="images/favicon.ico">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" />
+		<!-- <link rel="stylesheet" href="bower_components/normalize-css/normalize.css"> -->
+		<!-- <link href="bower_components/flexboxgrid-less/flexboxgrid.less" rel="stylesheet/less" type="text/css"> -->
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" /> -->
 		<link href="css/style.less" rel='stylesheet/less' type='text/css' />
 
 		<script>less = {env:"development"};</script>
@@ -21,14 +23,6 @@
 		<script>less.watch();</script>
 	</head>
 	<body>
-		<script>(function(d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) return;
-			js = d.createElement(s); js.id = id;
-			js.src = "http://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
-
 		<header id="about" class="about header">
 			<h1>Ngoding Seru</h1>
 		</header>
@@ -38,42 +32,15 @@
 				<h1>4 - 5 Desember</h1>
 			</section>
 			<section id="action">
-				<a href="https://competition.ia-toki.org" target="_blank"><button>Ikuti</button></a>
+				<button id="register">Daftar</button>
 				<div id="sharing">
 					<h1>Bagikan</h1>
 					<div class="addthis_sharing_toolbox"></div>
 				</div>
 			</section>
-			<!-- <div class="container">
-				<div class="row">
-					<div class="col-md-6 flex-center">
-						<h1>4 - 5 Desember</h1>
-					</div>
-					<div class="row col-md-6">
-						<div class="button-wrap">
-							<a href="https://competition.ia-toki.org" target="_blank"><button class="btn btn-danger">Ikuti</button></a>
-						</div>
-						<div class="button-wrap">
-							<button id="shareButton" type="button" class="btn btn-success">Berbagi</button>
-						</div>
-						<br />
-						<br />
-						<h3 class="text-center">Ikuti kami di Twitter dan Facebook</h3>
-						<div class="social-media col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2 clearfix">
-							<div class="col-xs-6">
-								<div class="fb-like" data-href="https://www.facebook.com/Ngoding-Seru-1705954426304766" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
-							</div>
-							<div class="col-xs-6">
-								<a href="https://twitter.com/ngodingseru" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @ngodingseru</a>
-								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div> -->
 		</section>
 
-		<div id="why" class="why section">
+		<!-- <div id="why" class="why section">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
@@ -302,7 +269,7 @@
 			<div class="container">
 				<p class="text-center">&copy; Ikatan Alumni TOKI</p>
 			</div>
-		</footer>
+		</footer> -->
 
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
@@ -311,6 +278,12 @@
 		<link href="css/arthref.min.css" rel='stylesheet' type='text/css' />
 		<script src="js/firebase.js"></script>
 		<script src="js/share.js"></script>
+		<script>
+			var registerButton = document.querySelector("#register");
+			registerButton.addEventListener("click", function() {
+				window.open("http://competition.ia-toki.org", "_blank");
+			});
+		</script>
 		<script>
 						 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 						 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

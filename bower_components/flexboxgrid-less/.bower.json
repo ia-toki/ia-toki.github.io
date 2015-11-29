@@ -1,0 +1,14 @@
+{
+  "name": "flexboxgrid-less",
+  "homepage": "https://github.com/bassjobsen/flexboxgrid-less",
+  "_release": "6032a706e5",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "6032a706e54f40acf1d61861b4b84982869327f8"
+  },
+  "_source": "https://github.com/bassjobsen/flexboxgrid-less.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/bassjobsen/flexboxgrid-less.git",
+  "_direct": true
+}
