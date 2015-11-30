@@ -9756,6 +9756,14 @@ body {
   height: 100%;
   margin: 0;
 }
+html {
+  font-size: 12px;
+}
+@media only screen and (min-width: 650px) {
+  html {
+    font-size: 16px;
+  }
+}
 body {
   background-image: url('pattern.png');
   background-repeat: repeat;
@@ -9795,13 +9803,8 @@ a:visited {
 }
 #about h1 {
   font-family: 'LemonMilk', sans-serif;
-  font-size: 4rem;
+  font-size: 6rem;
   text-align: center;
-}
-@media only screen and (min-width: 650px) {
-  #about h1 {
-    font-size: 6rem;
-  }
 }
 #detail-and-action {
   background: white;
@@ -9932,7 +9935,8 @@ a:visited {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 .information hr {
   border: 1px solid white;
@@ -9948,7 +9952,13 @@ a:visited {
 }
 .information h1 {
   font-size: 2em;
-  margin-top: 0;
+  margin-top: 1em;
+}
+@media only screen and (min-width: 650px) {
+  .information {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 @media only screen and (min-width: 985px) {
   #why {

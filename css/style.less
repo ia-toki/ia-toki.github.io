@@ -6,6 +6,7 @@
 @import "../bower_components/flexboxgrid-less/flexboxgrid.less";
 @half-gutter-width:		  2rem;
 @gutter-compensation:	 -2rem;
+@outer-margin:					2rem;
 
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300);
 @font-face {
@@ -87,6 +88,14 @@ html, body {
 	margin: 0;
 }
 
+html {
+	font-size: 12px;
+}
+
+.media(@s-break, html, {
+	font-size: 16px;
+});
+
 body {
 	background-image: url('pattern.png');
 	background-repeat: repeat;
@@ -114,13 +123,9 @@ a, a:hover, a:active, a:visited {
 
 	h1 {
 		font-family: @title-font;
-		font-size: 4rem;
+		font-size: 6rem;
 		text-align: center;
 	}
-
-	.media(@s-break; h1; {
-		font-size: 6rem;
-	});
 }
 
 #detail-and-action {
@@ -168,7 +173,9 @@ a, a:hover, a:active, a:visited {
 .information {
 	.background-red;
 	.row; .middle-xs; .center-xs;
-	padding: 4rem;
+
+	padding-top: 2rem;
+	padding-bottom: 2rem;
 
 	article {
 		.col-xs-12;
@@ -176,9 +183,14 @@ a, a:hover, a:active, a:visited {
 
 	h1 {
 		font-size: 2em;
-		margin-top: 0;
+		margin-top: 1em;
 	}
 }
+
+.media(@s-break, ~".information", {
+	padding-left: 2rem;
+	padding-right: 2rem;
+});
 
 #why {
 	.start-md;
