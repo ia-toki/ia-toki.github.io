@@ -9813,6 +9813,8 @@ a:visited {
   margin-right: -2rem;
   margin-left: -2rem;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   min-height: 50vh;
 }
 #detail-and-action hr {
@@ -9842,9 +9844,8 @@ a:visited {
     flex-direction: column;
     padding-right: 2rem;
     padding-left: 2rem;
-    flex-grow: 1;
-    flex-basis: 0;
-    max-width: 100%;
+    flex-basis: 50%;
+    max-width: 50%;
   }
 }
 #detail-and-action #detail h1 {
@@ -9876,9 +9877,8 @@ a:visited {
     flex-direction: column;
     padding-right: 2rem;
     padding-left: 2rem;
-    flex-grow: 1;
-    flex-basis: 0;
-    max-width: 100%;
+    flex-basis: 50%;
+    max-width: 50%;
   }
 }
 #detail-and-action #action button {
@@ -10123,6 +10123,15 @@ a:visited {
 #tlx {
   background: none;
   color: white;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: -2rem;
+  margin-left: -2rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   height: 100vh;
 }
 #tlx hr {
