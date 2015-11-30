@@ -229,56 +229,64 @@ p {
 	}
 }
 
-// .event, .event a {
-// 	padding-top: 1em;
-// 	color: white;
-// }
-// .learn {
-// 	color: white;
-// 	padding-top: 2em;
-// 	padding-bottom: 5em;
-// }
-// .registration {
-// 	color: white;
-// 	padding-bottom: 5em;
-// }
-// .registration a {
-// 	color: white;
-// }
-// .facts {
-// 	color: white;
-// 	height: 700px;
-// }
-#facts-APIO .background {
-	background-image: url('../images/apio2.jpg');
+#organizer {
+	.background-white;
+
+	ol {
+		.row; .middle-xs; .center-xs; .between-md;
+		li {
+			.col-xs-12; .col-md;
+			margin-top: 1em;
+			margin-bottom: 1em;
+		}
+	}
+
+	a, a:hover, a:active {
+		font: inherit;
+		text-decoration: inherit;
+		color: inherit;
+	}
+
+	figure {
+		margin: 0;
+		padding: 0;
+
+		img {
+			width: @s-break/3;
+			.transition(opacity 0.2s);
+		}
+
+		figcaption {
+			opacity: 0;
+			.transition(opacity 0.2s);
+		}
+
+		&:hover {
+			img {
+				opacity: 0.75;
+			}
+			figcaption {
+				opacity: 0.75;
+			}
+		}
+
+		&:active {
+			img {
+				opacity: 0.5;
+			}
+			figcaption {
+				opacity: 0.5;
+			}
+		}
+	}
 }
-#facts-OSN .background {
-	background-image: url('../images/osn2.jpg');
+
+#copyright {
+	.background-red;
+	.row; .center-xs; .middle-xs;
+	padding: 1rem;
 }
-#facts-TG .background {
-	background-image: url('../images/tg.jpg');
-}
-.organizer .organizer-unit {
-	margin-top: 2em;
-}
-.organizer .logo-wrapper {
-	height: 100px;
-	width: 150px;
-	margin: 0 auto;
-	white-space: nowrap;
-}
-.organizer .helper {
-		display: inline-block;
-		height: 100%;
-		vertical-align: middle;
-}
-.organizer img {
-	margin: 0 auto;
-	max-height: 100px;
-	max-width: 150px;
-	vertical-align: middle;
-	display: inline-block;;
-}
+
 .footer {
 	color: white;
 	margin-top: 1em;
