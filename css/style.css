@@ -9763,6 +9763,8 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1.5rem;
   color: white;
+  padding-right: 2rem;
+  padding-left: 2rem;
 }
 p {
   line-height: 1.5em;
@@ -9793,8 +9795,13 @@ a:visited {
 }
 #about h1 {
   font-family: 'LemonMilk', sans-serif;
-  font-size: 6rem;
+  font-size: 4rem;
   text-align: center;
+}
+@media only screen and (min-width: 650px) {
+  #about h1 {
+    font-size: 6rem;
+  }
 }
 #detail-and-action {
   background: white;
@@ -9812,13 +9819,21 @@ a:visited {
   border: 1px solid #B00600;
 }
 #detail-and-action #detail {
-  box-sizing: border-box;
   flex: 0 0 auto;
   flex-direction: column;
   padding-right: 2rem;
   padding-left: 2rem;
   flex-basis: 100%;
   max-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: -2rem;
+  margin-left: -2rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 @media only screen and (min-width: 985px) {
   #detail-and-action #detail {
@@ -10141,8 +10156,19 @@ a:visited {
   flex-direction: column;
   padding-right: 2rem;
   padding-left: 2rem;
-  flex-basis: 50%;
-  max-width: 50%;
+  flex-basis: 100%;
+  max-width: 100%;
+}
+@media only screen and (min-width: 985px) {
+  #tlx #carousel .uk-slideshow .uk-overlay-panel > div {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    flex-direction: column;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    flex-basis: 50%;
+    max-width: 50%;
+  }
 }
 #tlx #carousel .uk-slideshow .uk-overlay-background {
   background: #B00600;
