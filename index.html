@@ -208,6 +208,12 @@
 			registerButton.addEventListener("click", function() {
 				window.open("http://competition.ia-toki.org", "_blank");
 			});
+			var mq = window.matchMedia("(max-width: 768px)");
+			if(mq.matches) {
+				$('[data-uk-scrollspy]').each(function() {
+					$(this).attr('data-uk-scrollspy', null);
+				});
+			}
 		</script>
 		<script>
 			 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
