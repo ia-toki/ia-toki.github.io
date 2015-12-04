@@ -29,20 +29,18 @@
 		</footer>
 
 		<script>
+			var container = d3.select("#rank");
+			var table = container.append("table");
+			var thead = table.append("thead");
+			var trthead = thead.append("tr");
+			var tbody = table.append("tbody");
+
 			var createTable = function (data) {
 				var dataHead = data[0];
 				data.shift();
 				var dataBody = data;
 
-				var container = d3.select("#rank");
-
-				var table = container.append("table");
-
-				var thead = table.append("thead");
-
-				var tbody = table.append("tbody");
-
-				thead.append("tr")
+				trthead
 					.selectAll("td")
 					.data(dataHead).enter()
 					.append("td")
