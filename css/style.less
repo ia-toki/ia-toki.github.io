@@ -83,6 +83,17 @@
 	}
 }
 
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius:    @radius;
+  -o-border-radius:      @radius;
+  border-radius:         @radius;
+}
+
+.circle {
+	.border-radius(50%);
+}
+
 html, body {
 	height: 100%;
 	margin: 0;
@@ -436,61 +447,135 @@ a, a:hover, a:active, a:visited {
 	opacity: 0;
 }*/
 
-#text-success, #text-fail {
-	text-shadow: 0 2px 3px rgba(0,0,0,.9);
-}
-table.scoreboard td {
-  line-height: 40px !important;
-}
-
-.scoreboard-rank {
-  width: 30px;
-  text-align: center;
+#scoreboard {
+	header {
+		display: flex;
+		justify-content: center;
+	}
 }
 
-.scoreboard-logo {
-  width: 40px;
-  text-align: center;
+#rank {
+	display: flex;
+	justify-content: center;
+	table {
+		max-width: @s-break;
+		background-color: @color-white;
+		color: @color-red;
+	}
+
+	thead, tbody {
+		width: 100%;
+	}
+
+	tr {
+		width: 100%;
+		display: flex;
+		border-bottom: 1px solid @color-red;
+	}
+
+	td {
+		vertical-align: middle;
+		padding: 0.5em;
+	}
+
+	.no {
+		min-width: 4em;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	.name {
+		display: flex;
+		align-items: center;
+		flex: 1;
+
+		div.img {
+			height: 2em;
+			width: 2em;
+			margin-right: 1em;
+
+			background-size: cover;
+			.circle;
+		}
+	}
+
+	.score {
+		min-width: 3em;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		&.fac {
+			background-color: rgb(148, 223, 171);
+		}
+
+		&.ac {
+			background-color: rgb(179, 255, 202);
+		}
+
+		&.wa {
+			background-color: rgb(238, 167, 141);
+		}
+	}
 }
 
-.scoreboard-logo-image {
-  width: 40px;
-  height: 40px;
-  text-align: center;
-}
-
-.scoreboard-score {
-  width: 60px;
-  text-align: center;
-}
-
-.scoreboard-icpc-accepted {
-  background-color: #33FF66 !important;
-}
-.color-white {
-	color: white;
-}
-
-.scoreboard-icpc-not-accepted {
-  background-color: #FF6666 !important;
-}
-
-.scoreboard-icpc-accepted-details {
-
-}
-
-.scoreboard-icpc-accepted-attempts {
-  float: left;
-  width: 70px;
-  line-height: 25px !important;
-  font-weight: bold;
-}
-
-
-.scoreboard-icpc-accepted-penalty {
-  float: left;
-  width: 70px;
-  line-height: 15px !important;
-  padding: 0;
-  font-size: smaller;
-}
+// #text-success, #text-fail {
+// 	text-shadow: 0 2px 3px rgba(0,0,0,.9);
+// }
+// table.scoreboard td {
+//   line-height: 40px !important;
+// }
+//
+// .scoreboard-rank {
+//   width: 30px;
+//   text-align: center;
+// }
+//
+// .scoreboard-logo {
+//   width: 40px;
+//   text-align: center;
+// }
+//
+// .scoreboard-logo-image {
+//   width: 40px;
+//   height: 40px;
+//   text-align: center;
+// }
+//
+// .scoreboard-score {
+//   width: 60px;
+//   text-align: center;
+// }
+//
+// .scoreboard-icpc-accepted {
+//   background-color: #33FF66 !important;
+// }
+// .color-white {
+// 	color: white;
+// }
+//
+// .scoreboard-icpc-not-accepted {
+//   background-color: #FF6666 !important;
+// }
+//
+// .scoreboard-icpc-accepted-details {
+//
+// }
+//
+// .scoreboard-icpc-accepted-attempts {
+//   float: left;
+//   width: 70px;
+//   line-height: 25px !important;
+//   font-weight: bold;
+// }
+//
+//
+// .scoreboard-icpc-accepted-penalty {
+//   float: left;
+//   width: 70px;
+//   line-height: 15px !important;
+//   padding: 0;
+//   font-size: smaller;
+// }
