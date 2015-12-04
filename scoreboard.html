@@ -95,11 +95,15 @@
 
 			var simpleUrl = "http://ngodingscoreboard.kilatiron.net/";
 
-			$.get(simpleUrl, function(response) {
-				var simpleData = response;
-				// console.log(simpleData);
-				createTable(simpleData);
-			});
+			var fetchScoreboard = function() {
+				$.get(simpleUrl, function(response) {
+					var simpleData = response;
+					createTable(simpleData);
+				});
+			}
+
+			fetchScoreboard();
+			window.setInterval(fetchScoreboard, 10*1000);
 		</script>
 	</body>
 </html>
