@@ -13,14 +13,39 @@
 		<title itemprop="name">Ngoding Seru</title>
 		<link rel="shortcut icon" type="image/ico" href="images/favicon.ico">
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
-		<script src="bower_components/js-xlsx/dist/xlsx.min.js"></script>
 		<script src="bower_components/d3/d3.min.js"></script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link href="css/style.css" rel='stylesheet' type='text/css' />
+
+		<script>
+			var searchOpt = ["jagoan", "pejuang", "pemula"];
+			var search = window.location.search.substring(1);
+			var goSearch = function(src, replace) {
+				replace = replace || false;
+				var newUrl = window.location.origin + window.location.pathname + "?" + src;
+				if(replace) {
+					window.location.replace(newUrl);
+				} else {
+					window.location.assign(newUrl);
+				}
+			};
+			// simple redirect
+			if(searchOpt.every(function(d) { return d !== search;})) {
+				goSearch(searchOpt[0], true);
+			}
+		</script>
 	</head>
 	<body id="scoreboard">
 		<header>
-			<h1 class="">Scoreboard Ngoding Seru Desember 2015 - Divisi Jagoan</h1>
+			<h1>Scoreboard Ngoding Seru Desember 2015 -
+				<span id="judulDivisi" class="selector">
+					<span>Divisi</span>
+					<ul>
+						<li data="pemula">Divisi Pemula</li>
+						<li data="pejuang">Divisi Pejuang</li>
+						<li data="jagoan">Divisi Jagoan</li>
+					<ul>
+				<span>
+			</h1>
 		</header>
 		<div id="rank"></div>
 
@@ -29,13 +54,35 @@
 		</footer>
 
 		<script>
+			var cacheUrl = "http://ngodingscoreboard.kilatiron.net/?";
+			var scoreboardTypes = {
+				"jagoan": ["https://php.ia-toki.org/jagoan.php", "icpc", "Divisi Jagoan"],
+				"pejuang": ["https://php.ia-toki.org/pejuang.php", "ioi", "Divisi Pejuang"],
+				"pemula": ["https://php.ia-toki.org/pemula.php", "ioi", "Divisi Pemula"]
+			};
+
+			var judulDivisi = document.querySelector("#judulDivisi");
+			judulDivisi.querySelector("* > span").innerHTML = scoreboardTypes[search][2];
+			judulDivisi.querySelector("ul li[data="+search+"]").classList.add("selected");
+
+			judulDivisi.querySelector("* > span").addEventListener("click", function() {
+				judulDivisi.classList.toggle("opened");
+			});
+
+			Array.from(judulDivisi.querySelectorAll("ul li")).forEach(function(opt) {
+				opt.addEventListener("click", function() {
+					goSearch(opt.getAttribute("data"));
+				});
+			});
+		</script>
+		<script>
 			var container = d3.select("#rank");
 			var table = container.append("table");
 			var thead = table.append("thead");
 			var trthead = thead.append("tr");
 			var tbody = table.append("tbody");
 
-			var createTable = function (data) {
+			var createTable = function(data, type) {
 				var dataHead = data[0];
 				data.shift();
 				var dataBody = data;
@@ -78,25 +125,35 @@
 								td.append("div").text(d[0]);
 							} else if(i == 2) {
 								td.classed("score", true);
-								td.append("div").text((d[0] != 0)? d[0] : '-');
-								td.append("div").text((d[1] != 0)? d[1] : '-');
+								if(type == "icpc") {
+									td.append("div").text((d[0] != 0)? d[0] : '-');
+									td.append("div").text((d[1] != 0)? d[1] : '-');
+								} else if(type == "ioi") {
+									td.text(d);
+								}
 							} else {
 								td.classed("score", true);
-								td.classed("wa", d[0] == 0 && d[1] != 0);
-								td.classed("ac", d[0] == 1);
-								td.classed("fac", d[0] == 2);
-								td.append("div").text((d[1] != 0)? d[1] : '-');
-								td.append("div").text((d[2] != 0)? d[2] : '-');
+								if(type == "icpc") {
+									td.classed("wa", d[0] == 0 && d[1] != 0);
+									td.classed("ac", d[0] == 1);
+									td.classed("fac", d[0] == 2);
+									td.append("div").text(d[1] != 0? d[1] : '-');
+									td.append("div").text(d[2] != 0? d[2] : '-');
+								} else if(type == "ioi") {
+									td.classed("wa", d != null && d != 100);
+									td.classed("ac", d == 100);
+									td.text(d != null? d : "-");
+								}
 							}
 						});
 			};
 
-			var simpleUrl = "http://ngodingscoreboard.kilatiron.net/";
-
 			var fetchScoreboard = function() {
+				var scoreboardUrl = scoreboardTypes[search][0];
+				var simpleUrl = cacheUrl + scoreboardUrl;
 				$.get(simpleUrl, function(response) {
 					var simpleData = response;
-					createTable(simpleData);
+					createTable(simpleData, scoreboardTypes[search][1]);
 				});
 			}
 
